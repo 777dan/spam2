@@ -4,10 +4,9 @@ const str1 =
 const str2 =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora id commodi neque, unde amet adipisci eius molestias error, quae cumque placeat quidem illum dolorem tenetur porro molestiae quas officia culpa.";
 
-function check(str) {
-    let spam = "spam";
+function check(str, word) {
     str = str.trim().toLowerCase();
-    return (str.search(spam) !== -1) ? true : false;
+    return str.includes(word);
 }
 
-console.log(check(str1));
+console.log(check(str1, "spam"));
