@@ -9,12 +9,14 @@ function check(str, word) {
 
 function replace(str, word, newWord) {
     for (let i = 0; i < str.length; i++) {
-        str = str.trim().toLowerCase();
-        return str.replaceAll(word, newWord);
+        if (check(str, word)) {
+            str = str.trim().toLowerCase();
+            str = str.replaceAll(word, newWord);
+        }
+        return str;
     }
 }
 
 for (let i = 0; i < strokes.length; i++) {
-    console.log(check(strokes[i], "spam"));
     console.log(replace(strokes[i], "spam", "flud"));
 }
